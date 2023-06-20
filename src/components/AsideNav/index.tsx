@@ -11,7 +11,7 @@ import './asideNav.scss'
 
 function AsideNav() {
     return (
-        <div className='wrapper'>
+        <div className='aside-nav-wrapper'>
             <div className='logo'>
                 <span>
                     <BuildingLibraryIcon className='defaultIcon' />
