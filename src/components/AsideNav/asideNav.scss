@@ -1,0 +1,124 @@
+@import "../../styles/index";
+
+.wrapper {
+  width: 230px;
+  background-color: gray;
+  padding: 3em 1em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// App Logo
+.logo {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    color: $primary-color;
+  }
+
+  p {
+    font-weight: 500;
+    color: $primary-color;
+  }
+}
+
+// Nav-Links
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: $primary-color;
+    font-weight: 600;
+
+    .defaultIcon {
+      color: $primary-color;
+    }
+
+    &.activeLink,
+    &:hover {
+      color: $secondary-color;
+
+      .defaultIcon {
+        color: $secondary-color;
+      }
+
+      &::after {
+        content: "";
+        background-color: $secondary-color;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+// Notice-Board
+.notice-board {
+  background-color: $primary-color;
+  color: white;
+  padding: 0.5em;
+  border-radius: 1em;
+
+  .x-mark-icon {
+    cursor: pointer;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1em;
+
+    .defaultIcon {
+      color: $primary-color;
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+    padding-bottom: 1em;
+
+    h3 {
+      font-size: $text-md;
+    }
+
+    p {
+      font-size: $text-sm;
+      text-align: center;
+    }
+
+    .smile-icon {
+      background-color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.1em;
+      .defaultIcon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

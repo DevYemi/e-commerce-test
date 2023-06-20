@@ -1,14 +1,13 @@
 
+import AsideNav from "@/components/AsideNav"
 import './App.scss'
 
 function App() {
 
   return (
-    <>
-      <div>
-        HELLO WORLD
-      </div>
-    </>
+    <div>
+      <AsideNav />
+    </div>
   )
 }
 
