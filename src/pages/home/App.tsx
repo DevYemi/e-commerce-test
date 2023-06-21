@@ -3,6 +3,7 @@ import AsideNav from "@/components/AsideNav"
 import AsideContent from "@/components/AsideContent"
 import './App.scss'
 import Header from "@/components/Header"
+import ProductCard from "@/components/ProductCard"
 
 function App() {
 
@@ -10,13 +11,25 @@ function App() {
     <div className="app-wrapper">
       <AsideNav />
       <section className="app-container">
-        <Header />
-        <section >
+        <div>
+          <Header />
+        </div>
+        <div className="app-main">
           <main>
-
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </main>
-          <AsideContent />
-        </section>
+          <aside>
+            <AsideContent />
+          </aside>
+        </div>
       </section>
     </div>
   )

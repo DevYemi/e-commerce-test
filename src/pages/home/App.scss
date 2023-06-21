@@ -1,7 +1,32 @@
-.app-wrapper {
-  display: flex;
+@import "../../styles/index";
 
+.app-wrapper {
   .app-container {
     flex: 1;
+    padding-left: 0px;
+    transition: all 500ms ease-in-out;
+
+    .app-main {
+      display: flex;
+
+      main {
+        background-color: rgba(128, 128, 128, 0.104);
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 2em;
+      }
+
+      aside {
+        flex-basis: 230px;
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    @include screen-lg {
+      padding-left: 230px;
+    }
   }
 }
