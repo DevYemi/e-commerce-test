@@ -1,0 +1,85 @@
+@import "../../styles/index";
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 2em;
+
+  .greetings {
+    p {
+      letter-spacing: 0.5px;
+      line-height: 1.9;
+      &:nth-of-type(1) {
+        color: $primary-color;
+        span {
+          font-weight: 800;
+        }
+      }
+      &:nth-of-type(2) {
+        font-size: $text-sm;
+        color: gray;
+      }
+    }
+  }
+
+  // Search-Box
+  .search-box {
+    flex: 0.5;
+    input {
+      width: 100%;
+      padding: 0.6em 1em;
+      border-radius: 30px;
+      outline: none;
+      border: 1px solid gray;
+    }
+  }
+
+  // Accessories
+  .accessories {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    .profile-btn {
+      background-color: transparent;
+      color: $primary-color;
+      border-radius: 20px;
+      font-weight: 600;
+      padding: 0.3em 1em;
+      border: 1px solid $primary-color;
+    }
+
+    .plus-btn {
+      border-radius: 50%;
+      background-color: $primary-color;
+      padding: 0.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .defaultIcon {
+        color: white;
+      }
+    }
+
+    .bell-btn {
+      border-radius: 50%;
+      background-color: transparent;
+      padding: 0.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $primary-color;
+
+      .defaultIcon {
+        color: $primary-color;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}

@@ -7,18 +7,17 @@ import Header from "@/components/Header"
 function App() {
 
   return (
-    <div>
-      {/* <AsideNav />
-      <section> */}
-      <Header />
-      {/* <section>
+    <div className="app-wrapper">
+      <AsideNav />
+      <section className="app-container">
+        <Header />
+        <section >
           <main>
 
           </main>
           <AsideContent />
         </section>
-      </section> */}
-      {/* <AsideContent /> */}
+      </section>
     </div>
   )
 }
