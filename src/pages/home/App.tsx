@@ -51,6 +51,7 @@ function App() {
                             color={item.color}
                             id={item.id}
                             providedDnd={provided}
+                            liked={item.liked}
                           />
                         )}
                       </Draggable>

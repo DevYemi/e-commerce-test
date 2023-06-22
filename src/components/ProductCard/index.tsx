@@ -8,13 +8,16 @@ import {
     HeartIcon,
 } from "@heroicons/react/24/solid";
 import { DraggableProvided } from "@hello-pangea/dnd";
+import { useState } from "react";
 
 type DndProductType = ProductType & { providedDnd: DraggableProvided }
 
 
 
 function ProductCard(props: DndProductType) {
-    const { name, url, price, img, color, id, providedDnd } = props
+    const { name, url, price, img, color, id, liked, providedDnd } = props
+
+    const [isLiked, setIsLiked] = useState(liked);
 
     return (
         <div
@@ -26,7 +29,6 @@ function ProductCard(props: DndProductType) {
                 ...providedDnd.draggableProps.style
             }}
         >
-            <div className="card-blur-bg" role="presentation"></div>
             <div className="card-container">
                 <section className="card-contents">
                     <div className="card-details">
@@ -36,7 +38,9 @@ function ProductCard(props: DndProductType) {
                     </div>
                     <div className="card-icons">
                         <span {...providedDnd.dragHandleProps} className="card-drag-icon"> <ArrowsPointingOutIcon className="defaultIcon" /></span>
-                        <span className="card-heart-icon"> <HeartIcon className="defaultIcon" /></span>
+                        <span onClick={() => setIsLiked(!isLiked)} className={`card-heart-icon ${isLiked ? "isLiked" : ""}`}>
+                            <HeartIcon className="defaultIcon" />
+                        </span>
                         <span className="card-arrow-icon"> <ArrowDownRightIcon className="defaultIcon" /></span>
                     </div>
                 </section>

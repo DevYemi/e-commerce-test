@@ -14,6 +14,8 @@
         flex: 1;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        // grid-template-columns: repeat(13, auto);
+        // grid-template-rows: repeat(13, auto);
         gap: 20px;
         padding: 2em 1em;
 
