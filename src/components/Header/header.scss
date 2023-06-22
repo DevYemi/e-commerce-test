@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 2em;
+  column-gap: 20px;
+  padding: 2em 1em;
 
   .greetings {
     p {
@@ -25,7 +26,10 @@
 
   // Search-Box
   .search-box {
-    flex: 0.5;
+    flex: 1;
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
     input {
       width: 100%;
       padding: 0.6em 1em;
@@ -33,53 +37,168 @@
       outline: none;
       border: 1px solid gray;
     }
+
+    @include screen-lg(1200px) {
+      flex: 0.5;
+    }
+    @include screen-lg(560px) {
+      width: auto;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   // Accessories
   .accessories {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    position: relative;
 
-    .profile-btn {
-      background-color: transparent;
-      color: $primary-color;
-      border-radius: 20px;
-      font-weight: 600;
-      padding: 0.3em 1em;
-      border: 1px solid $primary-color;
-    }
+    .search-icon {
+      display: initial;
+      cursor: pointer;
 
-    .plus-btn {
-      border-radius: 50%;
-      background-color: $primary-color;
-      padding: 0.5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .defaultIcon {
-        color: white;
+      @include screen-lg(560px) {
+        display: none;
       }
     }
 
-    .bell-btn {
-      border-radius: 50%;
-      background-color: transparent;
-      padding: 0.5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $primary-color;
+    .profile-more-icon {
+      display: initial;
+      cursor: pointer;
 
-      .defaultIcon {
+      @include screen-lg {
+        display: none;
+      }
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      row-gap: 3px;
+
+      span {
+        display: block;
+        width: 20px;
+        height: 4px;
+        border-radius: 1.5rem;
+        background-color: $primary-color;
+
+        &:nth-child(1) {
+          width: 1.25rem;
+        }
+        &:nth-child(2) {
+          width: 2rem;
+        }
+        &:nth-child(3) {
+          width: 1.25rem;
+        }
+      }
+
+      @include screen-lg {
+        display: none;
+      }
+    }
+
+    .accessories-content {
+      display: flex;
+      position: absolute;
+      width: max-content;
+      transform: translate(-140px, 100px);
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      background-color: white;
+      border-radius: 1em;
+      padding: 1em;
+      row-gap: 10px;
+      z-index: 2;
+
+      .profile-btn {
+        background-color: transparent;
         color: $primary-color;
+        border-radius: 20px;
+        font-weight: 600;
+        padding: 0.3em 1em;
+        border: 1px solid $primary-color;
+      }
+
+      .btn-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        cursor: pointer;
+
+        .plus-btn {
+          border-radius: 50%;
+          background-color: $primary-color;
+          padding: 0.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .defaultIcon {
+            color: white;
+          }
+        }
+
+        .bell-btn {
+          border-radius: 50%;
+          background-color: transparent;
+          padding: 0.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid $primary-color;
+
+          .defaultIcon {
+            color: $primary-color;
+          }
+        }
+
+        @include screen-lg {
+          span {
+            display: none;
+          }
+        }
+      }
+
+      .logout-btn {
+        display: flex;
+        align-items: center;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        column-gap: 10px;
+        img {
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        @include screen-lg {
+          span {
+            display: none;
+          }
+        }
+      }
+
+      @include screen-lg {
+        position: static;
+        column-gap: 10px;
+        flex-direction: row;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        width: auto;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
       }
     }
+  }
 
-    img {
-      object-fit: cover;
-      border-radius: 50%;
-    }
+  @include screen-lg {
+    padding: 2em;
   }
 }

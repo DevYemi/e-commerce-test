@@ -4,27 +4,28 @@ import AsideContent from "@/components/AsideContent"
 import './App.scss'
 import Header from "@/components/Header"
 import ProductCard from "@/components/ProductCard"
+import { useState } from "react"
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 
 function App() {
+  const [asideNavIsOpen, setAsideNavIsOpen] = useState(false);
+
 
   return (
     <div className="app-wrapper">
-      <AsideNav />
+      <AsideNav isOpen={asideNavIsOpen} />
       <section className="app-container">
         <div>
-          <Header />
+          <Header asideNavIsOpen={asideNavIsOpen} toggleAsideNav={setAsideNavIsOpen} />
         </div>
         <div className="app-main">
           <main>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard
+              name="Serena Faux Mink Lashes"
+              price="4,800"
+              url="adeyanjuadeyrmi.com"
+              img="/src/assets/wizkid.jpg"
+            />
           </main>
           <aside>
             <AsideContent />

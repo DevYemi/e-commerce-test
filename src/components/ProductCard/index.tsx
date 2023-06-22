@@ -10,30 +10,35 @@ import {
 interface PropType {
     name: string;
     price: string;
-    url: string
+    url: string;
+    img: string;
 }
 
-function ProductCard() {
+function ProductCard({ name, price, url, img }: PropType) {
     return (
         <div className="card-wrapper">
-            <section className="card-contents">
-                <div className="card-details">
-                    <h2>Serena Faux Mink Lashes</h2>
-                    <p>adeyanjuadeyemi.com</p>
-                    <h2>₦4,800</h2>
-                </div>
-                <div className="card-icons">
-                    <span className="card-drag-icon"> <ArrowsPointingOutIcon className="defaultIcon" /></span>
-                    <span className="card-heart-icon"> <HeartIcon className="defaultIcon" /></span>
-                    <span className="card-arrow-icon"> <ArrowDownRightIcon className="defaultIcon" /></span>
-                </div>
-            </section>
-            <section className="card-img">
-                <img
-                    src="/src/assets/wizkid.jpg"
-                    alt="Startboy"
-                />
-            </section>
+            <div className="card-blur-bg" role="presentation"></div>
+            <div className="card-container">
+                <section className="card-contents">
+                    <div className="card-details">
+                        <h2>{name}</h2>
+                        <p>{url}</p>
+                        <h2>₦{price}</h2>
+                    </div>
+                    <div className="card-icons">
+                        <span className="card-drag-icon"> <ArrowsPointingOutIcon className="defaultIcon" /></span>
+                        <span className="card-heart-icon"> <HeartIcon className="defaultIcon" /></span>
+                        <span className="card-arrow-icon"> <ArrowDownRightIcon className="defaultIcon" /></span>
+                    </div>
+                </section>
+                <section className="card-img">
+                    <img
+                        src={img}
+                        alt="Startboy"
+                    />
+                </section>
+            </div>
+
         </div>
     )
 }

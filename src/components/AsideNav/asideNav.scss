@@ -1,12 +1,26 @@
 @import "../../styles/index";
 
 .aside-nav-wrapper {
-  width: 230px;
   padding: 2em 1em;
-  height: 100vh;
+  background-color: white;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  z-index: 3;
+  bottom: 0;
+  width: 230px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateX(-500px);
+  transition: all 500ms ease-in-out;
+  box-shadow: 11px -5px 20px -10px rgba(101, 97, 97, 0.63);
+  -webkit-box-shadow: 11px -5px 20px -10px rgba(101, 97, 97, 0.63);
+  -moz-box-shadow: 11px -5px 20px -10px rgba(101, 97, 97, 0.63);
+
+  &.active-display {
+    transform: translateX(0px);
+  }
 
   // App Logo
   .logo {
@@ -119,5 +133,10 @@
         }
       }
     }
+  }
+
+  @include screen-lg {
+    transform: translateX(0px);
+    box-shadow: none;
   }
 }

@@ -9,9 +9,14 @@ import {
 } from '@heroicons/react/24/outline'
 import './asideNav.scss'
 
-function AsideNav() {
+interface PropType {
+    isOpen: boolean
+}
+
+function AsideNav({ isOpen }: PropType) {
+
     return (
-        <div className='aside-nav-wrapper'>
+        <div className={`aside-nav-wrapper ${isOpen ? "active-display" : ""}`}>
             <div className='logo'>
                 <span>
                     <BuildingLibraryIcon className='defaultIcon' />

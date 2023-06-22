@@ -2,12 +2,12 @@
 
 .aside-content-wrapper {
   width: 230px;
-  background-color: gray;
-  padding: 2em 1em;
-  height: 100vh;
+  padding: 0 1em;
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+  position: sticky;
+  top: 2em;
 
   .card {
     background-color: $primary-color;
